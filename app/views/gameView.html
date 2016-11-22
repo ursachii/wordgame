@@ -1,1 +1,21 @@
-<div ng-bind="username"></div>
+<div class="row text-center text-info">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 text-center">
+        <div class="row">
+            <h1 ng-bind="game.currentWord().word"></h1>
+        </div>
+        <div class="row">
+            <label>
+                <input ng-model="game.solution" ng-paste="$event.preventDefault()" class="input-lg word-input">
+            </label>
+        </div>
+        <div class="row">
+            <wrd-timer timeout="40"></wrd-timer>
+        </div>
+        <div class="row h4">
+            <span>Score:</span>
+            <span ng-bind="game.totalScore" class=""></span>
+        </div>
+    </div>
+</div>
+

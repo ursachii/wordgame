@@ -6,7 +6,4 @@ angular.module('words.game', ['ngRoute'])
             templateUrl: 'views/gameView.html',
             controller: 'GameViewCtrl'
         });
-    }]).controller('GameViewCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
-    $scope.username = $rootScope.username;
-
-}]);
+    }]);

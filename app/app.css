@@ -31,3 +31,12 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.word-input {
+  width: 100%;
+  margin: 20px 0px;
+}
+
+.timer-progress {
+  height: 2px;
+}
