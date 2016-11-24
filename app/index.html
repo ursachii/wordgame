@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>My AngularJS App</title>
+    <title>A Game Of Words</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
@@ -16,10 +16,12 @@
 <div class="main-layout">
     <div class="container">
         <div ng-view></div>
-        <ul class="nav nav-pills">
-            <li role="presentation"><a href="#words/start">Home</a></li>
-            <li role="presentation"><a href="#words/scores">Scores</a></li>
-        </ul>
+        <div class="text-center text-info">
+            <ul class="main-menu">
+                <li class="nav-item" role="presentation"><a href="#words/start">Home</a></li>
+                <li class="nav-item" role="presentation"><a href="#words/scores">Scores</a></li>
+            </ul>
+        </div>
     </div>
 </div>
 

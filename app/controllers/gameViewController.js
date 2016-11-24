@@ -13,7 +13,10 @@ angular.module('words.game')
             });
 
             function startGame(response) {
-                $scope.game = new Game(response.data);
+                var words = response.data.sort(function () {
+                    return (Math.round(Math.random()) - 0.5);
+                });
+                $scope.game = new Game(words);
                 $scope.game.start();
                 $scope.$watch('game.solution', function (newVal, oldVal) {
                     $scope.game.onSolutionChanged(oldVal, newVal);

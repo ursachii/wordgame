@@ -17,6 +17,10 @@ angular.module('words')
             };
 
             $scope.timer = $timeout($scope.onTimeout, 100);
+
+            $scope.$on('$destroy', function() {
+                $timeout.cancel($scope.timer);
+            });
         }];
 
         return {
