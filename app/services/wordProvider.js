@@ -1,20 +1,15 @@
 'use strict';
 
 angular.module('words.game')
-    .factory('wordProvider', function () {
+    .factory('wordProvider', ['$http', function ($http) {
+        var RESOURCE_URL = 'https://words-8f15f.firebaseio.com/words.json';
 
         function getWords() {
-            return [
-                {answer: "pizza", word: "zzaip"},
-                {answer: "door", word: "oodr"},
-                {answer: "car", word: "rac"},
-                {answer: "answer", word: "rewans"},
-                {answer: "bus", word: "ubs"},
-                {answer: "words", word: "sword"}
-            ]
+            //TODO - get only a list of correct words and dynamically mix and scramble them
+            return $http.get(RESOURCE_URL);
         }
 
         return {
             getWords: getWords
         }
-    });
+    }]);

@@ -1,18 +1,30 @@
 'use strict';
 
 angular.module('words.game')
-    .controller('GameViewCtrl', ['$scope', '$rootScope', '$timeout', '$location', 'wordProvider', 'scoreService',
-        function ($scope, $rootScope, $timeout, $location, wordProvider, scoreService) {
+    .controller('GameViewCtrl', ['$scope', '$rootScope', '$timeout', '$location', 'wordProvider',
+        function ($scope, $rootScope, $timeout, $location, wordProvider) {
+
+            wordProvider.getWords().then(function (response) {
+                startGame(response);
+            });
+
             $rootScope.$on('timerDoneEvent', function () {
+                stopGame();
+            });
+
+            function startGame(response) {
+                $scope.game = new Game(response.data);
+                $scope.game.start();
+                $scope.$watch('game.solution', function (newVal, oldVal) {
+                    $scope.game.onSolutionChanged(oldVal, newVal);
+                });
+            }
+
+            function stopGame() {
                 $scope.game.stop();
-                scoreService.pushNewScore($rootScope.username, $scope.game.totalScore);
+                $rootScope.currentScore = $scope.game.totalScore;
                 $location.path('/end');
-            });
-            $scope.game = new Game(wordProvider.getWords());
-            $scope.game.start();
-            $scope.$watch('game.solution', function (newVal, oldVal) {
-                $scope.game.onSolutionChanged(oldVal, newVal);
-            });
+            }
 
             function Game(words) {
                 this.solution = "";
