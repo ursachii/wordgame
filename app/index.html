@@ -16,6 +16,10 @@
 <div class="main-layout">
     <div class="container">
         <div ng-view></div>
+        <ul class="nav nav-pills">
+            <li role="presentation"><a href="#words/start">Home</a></li>
+            <li role="presentation"><a href="#words/scores">Scores</a></li>
+        </ul>
     </div>
 </div>
 
@@ -28,9 +32,11 @@
 <script src="views/startView.js"></script>
 <script src="views/gameView.js"></script>
 <script src="views/endView.js"></script>
+<script src="views/scoresView.js"></script>
 <script src="controllers/startViewController.js"></script>
 <script src="controllers/gameViewController.js"></script>
 <script src="controllers/endViewController.js"></script>
+<script src="controllers/scoresViewController.js"></script>
 <script src="services/wordProvider.js"></script>
 <script src="services/scoreService.js"></script>
 <script src="directives/timer.js"></script>
