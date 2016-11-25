@@ -3,7 +3,9 @@
 angular.module('words')
     .controller('GameViewCtrl', ['$scope', '$rootScope', '$timeout', '$location', 'wordProvider',
         function ($scope, $rootScope, $timeout, $location, wordProvider) {
-
+            if($rootScope.username == undefined){
+                $location.path('/start');//TODO - global routing rules?
+            }
             wordProvider.getWords().then(function (response) {
                 startGame(response);
             });
