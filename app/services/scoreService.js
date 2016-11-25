@@ -19,6 +19,7 @@ angular.module('words')
             });
         }
 
+        //TODO - users with existing high score are ignored
         function computeNewBoard(response, score, user) {
             var scores = response.data == undefined ? [] : response.data;
             scores.sort(function (left, right) {
@@ -29,7 +30,7 @@ angular.module('words')
                 scores.splice(0, 0, {"user": user, "score": score})
             }
             for (var i = 0; i < scores.length - 1; i++) {
-                if (scores[i].score > score > scores[i + 1].score) {
+                if (scores[i].score > score && score > scores[i + 1].score) {
                     scores.splice(i + 1, 0, {"user": user, "score": score})
                 }
             }
