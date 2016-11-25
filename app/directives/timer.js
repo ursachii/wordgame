@@ -1,4 +1,4 @@
-angular.module('words')
+angular.module('words-timer', ['ui.bootstrap'])
     .directive('wrdTimer', ['$timeout', function ($timeout) {
 
         var controller = ['$scope', '$rootScope', function ($scope, $rootScope) {

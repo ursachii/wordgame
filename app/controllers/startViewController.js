@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('words.start')
+angular.module('words')
     .controller('StartViewCtrl', ['$scope', '$rootScope', '$location',
         function ($scope, $rootScope, $location) {
             $scope.username = "";

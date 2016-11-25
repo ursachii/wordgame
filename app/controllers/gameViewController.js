@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('words.game')
+angular.module('words')
     .controller('GameViewCtrl', ['$scope', '$rootScope', '$timeout', '$location', 'wordProvider',
         function ($scope, $rootScope, $timeout, $location, wordProvider) {
 

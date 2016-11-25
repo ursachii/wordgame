@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('words.end')
+angular.module('words')
     .controller('EndViewCtrl', ['$scope', '$rootScope', 'scoreService',
         function ($scope, $rootScope, scoreService) {
             $scope.username = $rootScope.username;

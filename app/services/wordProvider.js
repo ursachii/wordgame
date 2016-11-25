@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('words.game')
+angular.module('words')
     .factory('wordProvider', ['$http', function ($http) {
         var RESOURCE_URL = 'https://words-8f15f.firebaseio.com/words.json';
 
